@@ -4,7 +4,7 @@ class ListingsController < ApplicationController
 
 
   def index
-    @lisitng = Listing.all
+    @listings = Listing.all
   end
   
   def show
@@ -15,14 +15,16 @@ class ListingsController < ApplicationController
   end
   
   def create
-    @listing = lisitng.new(listing_params)
+    @listing = listing.new(listing_params)
     if(@listing.save)
       redirect_to @listing
     else 
       render :new
     end 
+  end 
   
   def edit
+    
   end
   
   def update

@@ -1,9 +1,9 @@
-<%= form_with(model: event, local: true) do |form| %>
-  <% if event.errors.any? %>
+<%= form_with(model: listing, local: true) do |form| %>
+  <% if listing.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+      <h2><%= pluralize(listing.errors.count, "error") %> prohibited this event from being saved:</h2>
       <ul>
-        <% event.errors.full_messages.each do |message| %>
+        <% listing.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
       </ul>
@@ -16,15 +16,25 @@
   </div>
 
   <div class="field">
-    <%= form.label :location %>
-    <%= form.text_field :location %>
+    <%= form.label :breed %>
+    <%= form.text_field :breed %>
   </div>
 
   <div class="field">
-    <%= form.label :notes %>
-    <%= form.text_area :notes %>
+    <%= form.label :price %>
+    <%= form.text_area :price %>
   </div>
-  
+
+  <div class="field">
+    <%= form.label :documentation %>
+    <%= form.text_area :documentation %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
