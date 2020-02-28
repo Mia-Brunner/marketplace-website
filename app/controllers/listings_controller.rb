@@ -24,19 +24,27 @@ class ListingsController < ApplicationController
   end 
   
   def edit
-    
+
   end
   
   def update
+    if(@listing.update(listing_params))
+      redirect_to @listing
+    else 
+      render :edit
+    end 
   end
   
   def destroy
+    @listing.delete
+
+    redirect_to listings_path
   end
 
   private
 
   def listing_params
-    params.require(:lisitng).permit(:name, :breed, :price, :documentation, :description)
+    params.require(:listing).permit(:name, :breed, :price, :documentation, :description)
   end 
 
   def find_listing
