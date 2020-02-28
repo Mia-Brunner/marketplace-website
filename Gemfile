@@ -55,3 +55,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Generate fake data 
 gem 'faker'
+
+#user Authentication
+gem 'devise'
