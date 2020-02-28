@@ -1,8 +1,8 @@
 class ListingsController < ApplicationController
 
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
-  before_action :authorise_user!, only: [:update, :edit, :destroy]
   before_action :find_listing, only: [:show, :edit, :update, :destroy]
+  before_action :authorise_user!, only: [:update, :edit, :destroy]
   
 
   def index
@@ -18,6 +18,7 @@ class ListingsController < ApplicationController
   
   def create
     @listing = Listing.new(listing_params)
+    @listing.user_id = current_user.id
 
     if(@listing.save)
       redirect_to @listing
@@ -54,7 +55,7 @@ class ListingsController < ApplicationController
     @listing = Listing.find(params[:id])
   end 
 
-  # def authorise_user!
-  #   return true if current_user
-  # end
+  def authorise_user!
+    return true if current_user.id == @listing.user_id
+  end
 end

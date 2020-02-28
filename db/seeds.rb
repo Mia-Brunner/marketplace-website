@@ -5,26 +5,32 @@ users = [
   ]
   users.each do |user|
     2.times do
-      Event.create(
-      name: Faker::Music.album,
-      location: Faker::Address.city,
-      notes: Faker::GreekPhilosophers.quote,
+      Listing.create(
+      name: Faker::Creature::Dog.name,
+      breed: Faker::Creature::Dog.breed, 
+      price: Faker::Number.digit,
+      documentation: Faker::Quote.famous_last_words,
+      description: Faker::Quote.matz,
       user_id: user1.id
       )
     end
     2.times do
-      Event.create(
-      name: Faker::Music.album,
-      location: Faker::Address.city,
-      notes: Faker::GreekPhilosophers.quote,
+      Listing.create(
+      name: Faker::Creature::Dog.name,
+      breed: Faker::Creature::Dog.breed, 
+      price: Faker::Number.digit,
+      documentation: Faker::Quote.famous_last_words,
+      description: Faker::Quote.matz,
       user_id: user2.id
       )
     end
     2.times do
-      Event.create(
-      name: Faker::Music.album,
-      location: Faker::Address.city,
-      notes: Faker::GreekPhilosophers.quote,
+      Listing.create(
+      name: Faker::Creature::Dog.name,
+      breed: Faker::Creature::Dog.breed, 
+      price: Faker::Number.digit,
+      documentation: Faker::Quote.famous_last_words,
+      description: Faker::Quote.matz,
       user_id: user3.id
       )
     end
