@@ -1,12 +1,17 @@
 <h1>All Listings</h1>
-<%= link_to 'Create a new listing', new_listing_path %>
 
+<% if user_signed_in? %>
+  <%= link_to 'Create a new listing', new_listing_path %>
+<% end %>
 
 <% @listings.each do |listing| %>
-<p>
-  <%= listing.name %>
-  <%= link_to 'View', listing_path(listing) %>
-  <%= link_to 'Edit', edit_listing_path(listing) %>
-  <%= link_to 'Delete', listing_path(listing), method: :delete, data: {confirm: 'Are you sure?'} %>
-</p>
+  <p>
+    <%= listing.name %>
+    <%= link_to 'View', listing_path(listing) %>
+
+    <% if user_signed_in? %>
+      <%= link_to 'Edit', edit_listing_path(listing) %>
+      <%= link_to 'Delete', listing_path(listing), method: :delete, data: {confirm: 'Are you sure?'} %>
+    <% end %>
+  </p>
 <% end %>
