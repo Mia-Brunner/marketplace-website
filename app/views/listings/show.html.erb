@@ -4,6 +4,6 @@
 <p><%= @listing.documentation %></p>
 <p><%= @listing.description%></p>
 
+<%= link_to 'Seller info', user_path(@listing.user_id)  %>
 
-<%= link_to 'View Seller Profile', profile_path(profile) %>
 <%= link_to 'Back', listings_path %>
