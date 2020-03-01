@@ -7,9 +7,11 @@ class ListingsController < ApplicationController
 
   def index
     @listings = Listing.all
+    
   end
   
   def show
+    
   end
   
   def new
@@ -45,7 +47,7 @@ class ListingsController < ApplicationController
     redirect_to listings_path
   end
 
-  private
+  #private
 
   def listing_params
     params.require(:listing).permit(:name, :breed, :price, :documentation, :description, :image)
