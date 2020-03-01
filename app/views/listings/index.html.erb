@@ -8,6 +8,8 @@
 <% @listings.each do |listing| %>
   <p>
     <%= listing.name %>
+    <%= listing.breed %>
+    <%= listing.price %>
     <%= link_to 'View', listing_path(listing) %>
     <% if user_signed_in? && listing.user_id == current_user.id %>
       <%= link_to 'Edit', edit_listing_path(listing) %>

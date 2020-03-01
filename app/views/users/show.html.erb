@@ -1,3 +1,8 @@
-<h1><%= @user.id %></h1>
+<% if user_signed_in? %>
+  <h1><%= @user.id %></h1>
+<% else %>
+<%= 'You need to log in or Create a new account to view our sellers information' %>
+<%end %>  
+
 
 <%= link_to 'Back', listings_path(@listing) %>
