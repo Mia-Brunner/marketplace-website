@@ -2,7 +2,7 @@ class ListingsController < ApplicationController
 
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :find_listing, only: [:show, :edit, :update, :destroy]
-  before_action :authorise_user!, only: [:update, :edit, :destroy]
+  before_action :authorise_user!, only: [:create, :update, :edit, :destroy]
   
 
   def index

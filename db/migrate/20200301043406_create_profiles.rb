@@ -1,11 +1,10 @@
 class CreateProfiles < ActiveRecord::Migration[6.0]
   def change
     create_table :profiles do |t|
-      t.references :user, null: false, foreign_key: true
       t.string :name
-      t.text :location
-      t.integer :contact
-      t.text :description
+      t.string :contact
+      t.string :location
+      t.string :description
 
       t.timestamps
     end
